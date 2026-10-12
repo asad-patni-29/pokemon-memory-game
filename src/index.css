@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.app {
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #e94560;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.reset-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #e94560;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #c73650;
+  }
+}
+
+.congrats {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #4ecca3;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card {
+  aspect-ratio: 1;
+  cursor: pointer;
+  perspective: 600px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  background: #16213e;
+  border: 2px solid #e94560;
+  font-size: 2rem;
+  color: #e94560;
+  font-weight: bold;
+}
+
+.card-front {
+  background: #0f3460;
+  transform: rotateY(180deg);
+
+  img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+}
