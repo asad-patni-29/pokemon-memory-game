@@ -71,6 +71,7 @@ function App() {
   };
 
   const won = matched.length === deck.length;
+
   return (
     <div className="app">
       <h1>Pokemon Memory Game</h1>
